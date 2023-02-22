@@ -1,21 +1,30 @@
 import { PlusCircle, Trash } from "phosphor-react";
 import { ChangeEvent, FormEvent, useState } from "react";
 import { Task } from "./Task";
+import { v4 as uuidv4 } from 'uuid';
 
 import styles from './TaskList.module.css'
 
+interface Task {
+  id: string;
+  title: string;
+  isCompleted: boolean;
+}
+
 export function TaskList() {
-  const [tasks, setTasks] = useState<string[]>([])
+  const [tasks, setTasks] = useState<Task[]>([])
   const [newTaskText, setNewTaskText] = useState('')
 
   function handleCreateNewTask(event: FormEvent) {
     event.preventDefault()
-    
-    setTasks([...tasks, newTaskText])
+
+    setTasks([...tasks, {
+      id: uuidv4(),
+      title: newTaskText,
+      isCompleted: false
+    }])
 
     setNewTaskText('')
-
-    console.log(tasks)
   }
 
   function handleNewTaskChange(event: ChangeEvent<HTMLInputElement>) {
@@ -24,11 +33,13 @@ export function TaskList() {
 
   function deleteTask(taskToDelete: string) {
     const tasksWithoutDeletedOne = tasks.filter(task => {
-      return task !== taskToDelete
+      return task.id !== taskToDelete
     })
 
     setTasks(tasksWithoutDeletedOne)
   }
+
+
 
   const taskCount = tasks.length
   
@@ -64,7 +75,10 @@ export function TaskList() {
             {tasks.map(task => {
               return (
                 <Task
-                  task={task}
+                  key={task.id}
+                  id={task.id}
+                  task={task.title}
+                  isCompleted={task.isCompleted}
                   onDeleteTask={deleteTask}
                 />
               )
