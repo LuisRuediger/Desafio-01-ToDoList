@@ -39,9 +39,17 @@ export function TaskList() {
     setTasks(tasksWithoutDeletedOne)
   }
 
-
+  function handleToggleTaskCompletion(id: string) {
+    const newTasks = tasks.map(task => task.id === id ? {
+      ...task,
+      isCompleted: !task.isCompleted
+    }: task)
+    setTasks(newTasks)
+  }
 
   const taskCount = tasks.length
+
+  const taskDoneCount = tasks.filter(task => task.isCompleted === true).length
   
   return (
     <div className={styles.wrapper}>
@@ -66,7 +74,7 @@ export function TaskList() {
           </div>
           <div className={styles.doneTasksCount}>
             <p>Concluídas</p>
-            <span>5 de 10</span>
+            <span>{taskCount !== 0 ? `${taskDoneCount} de ${taskCount}` : 0}</span>
           </div>
         </div>
 
@@ -78,8 +86,8 @@ export function TaskList() {
                   key={task.id}
                   id={task.id}
                   task={task.title}
-                  isCompleted={task.isCompleted}
                   onDeleteTask={deleteTask}
+                  isCompleted={handleToggleTaskCompletion}
                 />
               )
             })}
