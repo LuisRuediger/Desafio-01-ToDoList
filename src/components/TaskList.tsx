@@ -1,5 +1,5 @@
 import { PlusCircle, Trash } from "phosphor-react";
-import { ChangeEvent, FormEvent, useState } from "react";
+import { ChangeEvent, FormEvent, InvalidEvent, useState } from "react";
 import { Task } from "./Task";
 import { v4 as uuidv4 } from 'uuid';
 
@@ -29,6 +29,11 @@ export function TaskList() {
 
   function handleNewTaskChange(event: ChangeEvent<HTMLInputElement>) {
     setNewTaskText(event.target.value)
+    event.target.setCustomValidity('')
+  }
+
+  function handleNewTaskInvalid(event: InvalidEvent<HTMLInputElement>) {
+    event.target.setCustomValidity('Esse campo é obrigatório!')
   }
 
   function deleteTask(taskToDelete: string) {
@@ -60,8 +65,14 @@ export function TaskList() {
               className={styles.input}
               onChange={handleNewTaskChange}
               value={newTaskText}
+              onInvalid={handleNewTaskInvalid}
+              required
             />
-            <button type='submit' className={styles.button}>
+            <button 
+              type='submit' 
+              className={styles.button}
+              disabled={newTaskText.length === 0}
+            >
               Criar
               <PlusCircle size={16} weight="bold" />
             </button>

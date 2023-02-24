@@ -4,13 +4,9 @@ import './global.css'
 
 function App() {
 return (
-    <div className="App">
-      <Header />
-
-      <TaskList />
-
-      
-
+    <div>
+        <Header />
+        <TaskList />
     </div>
   )
 }

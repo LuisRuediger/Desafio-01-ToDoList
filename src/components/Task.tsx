@@ -26,7 +26,6 @@ export function Task({ task, id, onDeleteTask, isCompleted }: TaskProps) {
           className={styles.checkbox} 
           id={id} 
           onClick={handleCompleteTask}
-          required
         />
         <p>{task}</p>
       </div>

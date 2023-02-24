@@ -8,7 +8,7 @@
 }
 
 img {
-  width: 2.2rem;
+  max-width: 2.2rem;
   height: 3.6rem;
   margin-right: 1.2rem;
 }

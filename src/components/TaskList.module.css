@@ -1,6 +1,7 @@
 .wrapper {
-  width: 73.6rem;
+  max-width: 73.6rem;
   margin: auto;
+  padding: 0 1.6rem;
 }
 
 .taskForm {
@@ -14,7 +15,7 @@
 
 .taskForm input {
   height: 5.4rem;
-  width: 63.8rem;
+  max-width: 63.8rem;
   padding: 1.6rem;
   border-radius: 8px;
   border: 1px solid var(--gray-700);
@@ -34,12 +35,22 @@
   background: var(--blue-600);
   font-weight: 700;
   font-size: 1.4rem;
-  border: none  ;
+  border: none;
+  transition: background-color .1s ease-in;
 
   display: flex;
   align-items: center;
   justify-content: center;
   gap: .8rem;
+}
+
+.taskForm button:not(:disabled):hover {
+  background: var(--blue-500);
+}
+
+.taskForm button:disabled {
+  opacity: 0.9;
+  cursor: not-allowed;
 }
 
 .tasksInfo {

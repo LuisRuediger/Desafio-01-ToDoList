@@ -4,6 +4,7 @@ li {
   background-color: var(--gray-500);
   padding: 1.6rem;
   margin-top: 2.4rem;
+  max-width: 73.6rem;
 
   display: flex;
   align-items: flex-start;
@@ -18,6 +19,7 @@ li ~ li {
   display: flex;
   align-items: flex-start;
   gap: 1.2rem;
+  max-width: 90%;
 }
 
 .checkbox {
@@ -54,11 +56,10 @@ li ~ li {
 }
 
 .taskInput p {
-  height: 4rem;
-  width: 63.2rem;
   font-weight: 400;
   font-size: 1.4rem; 
   word-wrap: break-word;
+  max-width: 90%;
 }
 
 .checkbox:checked + p {
@@ -76,4 +77,24 @@ li button {
   display: flex;
   align-items: center;
   border-radius: 2px;
+  width: 2.4rem;
+  margin-left: 1.2rem;
+}
+
+li button:hover{
+  color: var(--danger);
+  transition: all 200ms ease;
+}
+
+.checkbox:has:checked:focus {
+  outline: transparent;
+}
+
+@media (max-width: 720px) {
+  .taskInput {
+    max-width: 85%;
+  }
+  .taskInput p {
+    max-width: 85%;
+  }
 }
