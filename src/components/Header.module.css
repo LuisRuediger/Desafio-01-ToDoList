@@ -7,19 +7,19 @@
   justify-content: center;
 }
 
-img {
+.header img {
   max-width: 2.2rem;
   height: 3.6rem;
   margin-right: 1.2rem;
 }
 
-h1 {
+.header h1 {
   font-weight: 900;
   font-size: 40px;
   line-height: 48px;
   color: var(--purple-600);
 }
 
-span:first-child {
+.header span:first-child {
   color: var(--blue-500);
 }

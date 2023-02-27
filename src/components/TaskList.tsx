@@ -91,7 +91,17 @@ export function TaskList() {
 
         <main>
           <ul>
-            {tasks.map(task => {
+            {taskCount === 0 
+            
+            ? <li className={styles.emptyTasks}>
+                  <img src="./src/assets/clipboard.svg" alt="" />  
+                  <p>
+                    Você ainda não tem tarefas cadastradas
+                    <span>Crie tarefas e organize seus itens a fazer</span>
+                  </p>
+              </li> 
+            
+            : tasks.map(task => {
               return (
                 <Task
                   key={task.id}
@@ -102,6 +112,8 @@ export function TaskList() {
                 />
               )
             })}
+
+            
           </ul>
         </main>
     </div>

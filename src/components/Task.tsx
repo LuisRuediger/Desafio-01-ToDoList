@@ -19,7 +19,7 @@ export function Task({ task, id, onDeleteTask, isCompleted }: TaskProps) {
   }
 
   return (
-    <li>
+    <li className={styles.liContainer}>
       <div className={styles.taskInput}>
         <input 
           type="checkbox" 
