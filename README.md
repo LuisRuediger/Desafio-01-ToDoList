@@ -8,7 +8,6 @@ Projeto desenvolvido como desafio do primeiro módulo do curso Ignite da Rockets
 Aplicação WEB:
 <p align="center">
   <img src="./public/assets/githubpreview.gif"/>
-  <img src="./public/assets/mobilegithubpreview.gif"/>
 </p>
 
 ---
