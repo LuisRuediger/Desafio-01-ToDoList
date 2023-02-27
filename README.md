@@ -1,14 +1,14 @@
 # ToDo List <img align="right" src="https://img.shields.io/badge/Status-Conclu%C3%ADdo-lightgrey"/>
 
-como desafio do primeiro módulo do curso Ignite da Rocketseat. <br/>
-> Para ver o projeto rodando você pode acessar este [Link](link.com.br).
+Projeto desenvolvido como desafio do primeiro módulo do curso Ignite da Rocketseat. <br/>
+> Para ver o projeto rodando você pode acessar este [Link](https://desafio-01-to-do-list-ten.vercel.app/).
 
 ---
 
 Aplicação WEB:
 <p align="center">
-  <img src="#"/>
-  <img src="#"/>
+  <img src="./public/assets/githubpreview.gif"/>
+  <img src="./public/assets/mobilegithubpreview.gif"/>
 </p>
 
 ---
