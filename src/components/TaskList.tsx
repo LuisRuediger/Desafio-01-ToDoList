@@ -94,7 +94,7 @@ export function TaskList() {
             {taskCount === 0 
             
             ? <li className={styles.emptyTasks}>
-                  <img src="./src/assets/clipboard.svg" alt="" />  
+                  <img src="/assets/clipboard.svg" alt="" />  
                   <p>
                     Você ainda não tem tarefas cadastradas
                     <span>Crie tarefas e organize seus itens a fazer</span>
